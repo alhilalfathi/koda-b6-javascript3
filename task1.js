@@ -1,10 +1,11 @@
-const array = [1, 2, "a", "1a"];
-console.log(array.toString());
+const array1 = ["a", "b", "c"];
+const array2 = ["d", "e", "f"];
+const array3 = array1.concat(array2);
 
-let num = 0
-let x = ""
-for(i=0; i<array.length; i++){
-     num = String(array[i])
-     x += num
-}
-console.log(x)
+console.log(array3);
+
+const array4 = [
+    ...array1,
+    ...array2
+] 
+console.log(array4);
