@@ -1,17 +1,32 @@
-const temperature = {
-    base: 10,
-    toFahrenheit: function(){
-        // console.log(`${this.base}`)
-        return this.base * (9/5) + 32
-    },
-    toKelvin: function(){
-        return this.base + 273.15
-    },
-    toReamur: function(){
-        return this.base * (4/5)
+const dataSet = ["joni","jane","john","mikael","mikaya","Mamika","joko"]
+
+// const keyword = "mika"
+let textLow = ""
+let arr = []
+
+// function lowerCase(text){
+//     textLow = text.toLowerCase()
+//     return textLow
+// }
+
+function searchName(keyword, cb){
+textLow = keyword.toLowerCase()
+    for(i=0; i<dataSet.length; i++){
+        if(dataSet[i].includes(textLow)){
+            // console.log("ada")
+            arr.push(dataSet[i])
+        }else {
+            // console.log("ga ada")
+        }
     }
+    cb()
 }
-console.log(temperature.base)
-console.log(temperature.toFahrenheit())
-console.log(temperature.toKelvin())
-console.log(temperature.toReamur())
+function display(){
+    console.log(arr)
+    console.log(arr.length)
+}
+searchName("Jo", display)
+
+
+// console.log(lowerCase("MiK"))
+// console.log(toLow)
