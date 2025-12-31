@@ -21,11 +21,11 @@ const data = [
     }
 ]
 
-console.log("Menunggu antrian")
+console.log("Menunggu antrian...")
 
 function tunggu(nm, wk){
     setTimeout(() => console.log(`Halo ${nm} pesanan kamu sudah selesai`)
-        ,wk * 1000)
+    ,wk * 1000)
 }
 
 function id(dt, tunggu){
@@ -34,10 +34,11 @@ function id(dt, tunggu){
     for(i=0; i<dt.length; i++){
         // console.log(dt[i])
         nama = dt[i].name
-        waktu = dt[i].wait
+        waktu += dt[i].wait
         // console.log(nama)
         // console.log(waktu)
         tunggu(nama,waktu)
+        
     }
     
 } 
