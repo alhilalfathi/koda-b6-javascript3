@@ -22,6 +22,10 @@ const data = [
     {
         name: "",
         wait: 2,
+    },
+    {
+        name: "Messi",
+        wait: 2,
     }
 ]
 
@@ -31,16 +35,26 @@ const data = [
     function start(){
         return new Promise((resolve, reject) => {
             const person = data[index]
-            if(person.name !== ""){
+            if(person){
+                if(person.name !== ""){
                 console.log("Menunggu antrian...")
                 setTimeout(function(){
                     console.log(`Pesanan ${person.name} sudah siap`)
                     index += 1
                     resolve(start())
                 }, person.wait*1000)
+                }else{
+                    
+                     setTimeout(function(){
+                    console.log("Nama Kosong")
+                    index += 1
+                    resolve(start())
+                }, person.wait*1000)
+                }
             }else {
                 reject()
             }
+
         })
     }
     return start()
