@@ -44,8 +44,7 @@ const data = [
                     resolve(start())
                 }, person.wait*1000)
                 }else{
-                    
-                     setTimeout(function(){
+                setTimeout(function(){
                     console.log("Nama Kosong")
                     index += 1
                     resolve(start())
