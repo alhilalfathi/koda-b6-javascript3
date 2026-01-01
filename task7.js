@@ -19,6 +19,11 @@ const data = [
         const person = dt[id]
         if(person){
             console.log(`${person.name}`)
+            setTimeout(()=>{
+                console.log(person.name)
+                id += 1
+                resolve(mulai())
+            }, person.wait)
         }
     })
     }  
