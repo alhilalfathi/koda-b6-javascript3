@@ -15,17 +15,20 @@ const data = [
  function queue (dt){
     let id = 0
     function mulai(){
-    return new Promise((resolve, reject) => {
+        return new Promise((resolve, reject) => {
         const person = dt[id]
         if(person){
-            console.log(`${person.name}`)
+            // console.log(`${person.name}`)
             setTimeout(()=>{
                 console.log(person.name)
                 id += 1
                 resolve(mulai())
             }, person.wait)
+        } else {
+            reject()
         }
     })
-    }  
+    }
+    return mulai()
  }
-console.log(queue(data))
+queue(data).then().catch(()=>{console.log("Antrian selesai")})
