@@ -10,6 +10,23 @@ fetch(url).then(obj=> obj.json().then(data => {
     
 }))
 
+async function getData(url) {
+  let emailb = []
+    try {
+        let res = await fetch(url)
+        let hasilRes = await res.json()
+        // console.log(hasilRes)
+        hasilRes.forEach(
+        user => {emailb.push(toLowerManual(user.email))}
+        )
+        console.log("hasil dari async await")
+        console.log(emailb)
+    }
+
+    catch(err) {
+      console.log(err)
+    }
+}
 
 const lowerCaseMap = {
     A: "a",
@@ -48,3 +65,4 @@ function toLowerManual(str) {
   }
   return hasil
 }
+getData(url)
